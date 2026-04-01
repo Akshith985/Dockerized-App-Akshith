@@ -13,18 +13,12 @@ This is a containerized Node.js application designed to demonstrate a clean, pro
 
 ---
 
-## 📂 Source Code & Configuration
+# --- TERMINAL COMMANDS ---
+# 1. Build the image:
+# docker build -t my-web-app .
 
-### index.js
-```javascript
-const express = require('express');
-const app = express();
-const port = 3000;
+# 2. Run the container:
+# docker run -p 8080:3000 my-web-app
 
-app.get('/', (req, res) => {
-  res.send('<h1>Hello from Docker! Deployed by Akshith.</h1>');
-});
-
-app.listen(port, () => {
-  console.log(`App running at http://localhost:${port}`);
-});
+# 3. Verify deployment:
+# curl -I http://localhost:8080
