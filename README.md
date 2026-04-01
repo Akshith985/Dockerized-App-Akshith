@@ -13,12 +13,22 @@ This is a containerized Node.js application designed to demonstrate a clean, pro
 
 ---
 
-# --- TERMINAL COMMANDS ---
-# 1. Build the image:
-# docker build -t my-web-app .
+## 💻 Terminal Commands
 
-# 2. Run the container:
-# docker run -p 8080:3000 my-web-app
+Use these commands to build, run, and verify the containerized application locally:
 
-# 3. Verify deployment:
-# curl -I http://localhost:8080
+```bash
+# 1. Build the Docker image
+docker build -t akshith-web-app .
+
+# 2. Run the container (Map host port 8080 to container port 3000)
+docker run -d -p 8080:3000 --name web-portfolio akshith-web-app
+
+# 3. Verify the application is running
+curl -I http://localhost:8080
+
+# 4. View container logs
+docker logs web-portfolio
+
+# 5. Stop the container
+docker stop web-portfolio
